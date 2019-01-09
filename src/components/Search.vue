@@ -1,10 +1,10 @@
 <template>
   <div id="search">
-    <div class='carousel-controls'>
-      <button class='carousel-controls__button' @click="previous">prev</button>
-      <button class='carousel-controls__button' @click="next">next</button>
+    <div class='carousel_controls'>
+      <button class='carousel_button' @click="previous">prev</button>
+      <button class='carousel_button' @click="next">next</button>
     </div>
-    <transition-group
+   <transition-group
       class='carousel'
     >
       <div 
@@ -14,11 +14,10 @@
         tag="div"
       >
         <img v-bind:src="artRecord.primaryimageurl" />
+        <h3 class='title'>{{artRecord.title}}</h3>
         <h3 v-for="person in artRecord.people">{{person.name}}</h3>
-        <h3>{{artRecord.title}}</h3>
-        <h4>{{artRecord.dated}}</h4>
-        <h4>{{artRecord.displayName}}</h4>
-        <h4>{{artRecord.culture}}</h4>
+        <h4 class='date'>{{artRecord.dated}}</h4>
+        <h4 class='culture'>{{artRecord.culture}}</h4>
       </div>
     </transition-group>
 
@@ -33,7 +32,8 @@ export default {
   data () {
     return {
       msg: 'Search',
-      artRecords: ''
+      artRecords: '',
+      firstArtRecord: ''
     }
   },
   methods: {
@@ -47,7 +47,7 @@ export default {
     }
   },
   mounted: function () {
-    fetch(`https://api.harvardartmuseums.org/object?keyword=meditation&hasimage:0&apikey=${config.apiKey}`)
+    fetch(`https://api.harvardartmuseums.org/object?keyword=meditation&hasimage=1&size=100&apikey=${config.apiKey}`)
       .then(response => response.json())
       .then(results => {
         this.artRecords = results.records
@@ -59,7 +59,30 @@ export default {
 <style scoped>
   img {
     width: 450px;
-    height: 600px;
+    height: 550px;
+    border: 12px solid #83B4AE;
+    overflow: hidden;
+  }
+  .title {
+    font-style: italic;
+  }
+  .image {
+    margin-bottom: 1000px;
+  }
+  .carousel_controls {
+    margin: 2.6em;
+  }
+  .carousel_button:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .carousel_button {
+    outline: none;
+    color: #fff;
+    border-radius: 10%;
+    background-color: #83B4AE;
+    margin: 0 6rem;
+    font-size: 1.2rem;
   }
 
 </style>
