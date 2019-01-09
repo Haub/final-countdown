@@ -1,27 +1,16 @@
 # final-countdown
 
-> A Vue.js project
+final-countdown is an application that was created in Vue as an assigned tech challenge.
 
-## Build Setup
+## Getting Started
+This is a general guide to setting up final-countdown on your local machine.
 
 ``` bash
-# install dependencies
+git clone
+cd final-countdown
 npm install
-
-# serve with hot reload at localhost:8080
 npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run all tests
-npm test
+   
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Screenshot

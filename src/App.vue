@@ -25,7 +25,10 @@ export default {
   margin-top: 60px;
 }
 h2 {
-  font-size: 30px;
-  margin-bottom: 5px;
+  font-size: 50px;
+  margin-bottom: 0;
+}
+h6 {
+  font-size: 20px;
 }
 </style>
