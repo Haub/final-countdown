@@ -5,8 +5,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 /test/unit/coverage/
-/utilities/config.js
-utilities/config.js
+/src/utilities/config.js
+src/utilities/config.js
+
 
 # Editor directories and files
 .idea
